@@ -1,0 +1,6 @@
+networkx
+matplotlib
+
+[dev]
+networkx
+matplotlib
