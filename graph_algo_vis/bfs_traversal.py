@@ -19,7 +19,7 @@ class BFS():
 					queue.append(i)
 					visited[i] = True
 					level[i] = level[curr_node] + 1
-					nx.draw_networkx_edges(G, pos, edgelist = [(curr_node,i)], width = 4.5, alpha = 0.6, edge_color = 'r')
+					nx.draw_networkx_edges(G, pos, edgelist = [(curr_node,i)], width = 3.5, alpha = 0.6, edge_color = 'r')
 		
 		return
 
@@ -51,7 +51,7 @@ class BFS():
 		options = {
 		"node_color": "#A0CBE2",
 		"edge_color": "#000000",
-		"width": 4,
+		"width": 3,
 		"edge_cmap": plt.cm.Blues,
 		"with_labels" : True,
 		}
@@ -60,15 +60,6 @@ class BFS():
 		nx.draw_networkx_edge_labels(G, pos, edge_labels = edge_labels, label_pos = 0.3, font_size = 11) #prints weight on all the edges
 		return pos
 
-	
-	def __DrawIteratedGraph(G, col_val):
-		pos = nx.spring_layout(G)
-		color = ["green", "blue", "yellow", "pink", "red", "black", "gray", "brown", "orange", "plum"]
-		values = []
-		for node in G.nodes():
-			values.append(color[col_val[node]])
-			#values.append(col_val.get(node, col_val.get(node)))
-		nx.draw(G, pos, with_labels = True, node_color = values, edge_color = 'black' ,width = 1, alpha = 0.7)  #with_labels=true is to show the node number in the output graph
 
 	def draw_graph(self, filename):
 		G,source = self.__CreateGraph(filename)

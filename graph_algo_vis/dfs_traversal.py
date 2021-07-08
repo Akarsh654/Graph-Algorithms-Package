@@ -53,7 +53,7 @@ class DFS():
 		options = {
 		"node_color": "#A0CBE2",
 		"edge_color": "#000000",
-		"width": 4,
+		"width": 3,
 		"edge_cmap": plt.cm.Blues,
 		"with_labels" : True,
 		}
@@ -65,12 +65,12 @@ class DFS():
 			if len(i) > 1:
 				for j in i[ :(len(i)-1)]:
 					if i[i.index(j)+1] in G[j]:
-						nx.draw_networkx_edges(G, pos, edgelist = [(j,i[i.index(j)+1])], width = 4.5, alpha = 0.6, edge_color = 'r')
+						nx.draw_networkx_edges(G, pos, edgelist = [(j,i[i.index(j)+1])], width = 3.5, alpha = 0.6, edge_color = 'r')
 					else:
 						#if in case the path was reversed because all the possible neighbours were visited, we need to find the adj node to it.
 						for k in i[1::-1]: 
 							if k in G[j]:
-								nx.draw_networkx_edges(G, pos, edgelist = [(j,k)], width = 4.5, alpha = 0.6, edge_color = 'r')
+								nx.draw_networkx_edges(G, pos, edgelist = [(j,k)], width = 3.5, alpha = 0.6, edge_color = 'r')
 								break
 	
 	#draws the graph and displays the weights on the edges
@@ -79,7 +79,7 @@ class DFS():
 		options = {
 		"node_color": "#A0CBE2",
 		"edge_color": "#000000",
-		"width": 4,
+		"width": 3,
 		"edge_cmap": plt.cm.Blues,
 		"with_labels" : True,
 		}
