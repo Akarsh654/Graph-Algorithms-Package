@@ -3,8 +3,8 @@
 ### Description ###
 
 The package aims to create visual outputs for popular graph algorithms.   
-Currently: BFS and DFS   
-I plan to implement more algorithms:  Prim's and Kruskal's Algorithms etc   
+Currently: BFS, DFS, Topological Sort, Prim's MST and Kruskal's MST      
+I plan to implement more algorithms: A* Search etc   
 
 It is not just limited to getting a visual output, but the algorithms will be optimised by using heuristics for non-polynomial time algorithms. This project aims to create a better understanding of the working of graph algorithms, improve the computation time and optimising the algorithms. It could be used by analysts as well as students and teachers, as a teaching aid.
 
@@ -14,16 +14,17 @@ To run the package: pip install graph-algo-vis
 
 ### BFS and DFS ###
 Import:   
-from graph_algo_vis import dfs_traversal
+from graph_algo_vis import dfs_traversal, bfs_traversal    
 
 Instantiation:   
-g = dfs_traversal.DFS()
+d = dfs_traversal.DFS()     
+b = bfs_traversal.BFS()       
 
 Visualize the input graph:   
-g.draw_graph("input.txt")  
+d.draw_graph("input.txt")  
 
 Visualize the result of DFS:   
-g.depth_first_search("input.txt")
+d.depth_first_search("input.txt")     
 
 ### Topological Sort ###  
 Import:   
@@ -33,7 +34,19 @@ Instantiation:
 g = topological_sort.Top_Sort()   
 
 Visualize the input graph and result:   
-g.topological_sort("input.txt")   
+g.topological_sort("input.txt")      
+
+### Prim's and Kruskal's MST ###  
+Import:   
+from graph_algo_vis import primsMST, kruskalsMST     
+
+Instantiation:   
+p = primsMST.Prims()     
+k = kruskalsMST.Krusals()
+
+Visualize the input graph and result:   
+p.prims("input.txt")         
+k.kruskals("input.txt")     
 
 ### Pre requisites ###
 
@@ -44,7 +57,7 @@ To run this package run you must have matplotlib and networkx libraries installe
 Input is taken from the file 
 #### input.txt ####
 
-Sample input for BFS and DFS
+Sample input for BFS, DFS, Prim's MST and Kruskal's MST    
 ```
 4
 0 5 10 5
@@ -102,12 +115,27 @@ Directed Acyclic Graph (DAG) is a linear ordering of vertices such that for ever
 Green node - denotes the starting node.                                        
 Red node - denotes the final node.   
 
-![3](https://i.ibb.co/Rz4qPMv/Graph-after-Topological-Sort.png)  
+![3](https://i.ibb.co/Rz4qPMv/Graph-after-Topological-Sort.png)     
+
+### Prim's and Kruskal's MST ###
+
+Prim's and Kruskal's algorithms are greedy algorithms that find a minimum spanning tree for       
+a weighted, connected, undirected graph.     
+
+Minimum Spanning Tree (MST) : A spanning tree with a weight less than or equal to the weight of every other     spanning tree. The weight of a spanning tree is the sum of weights given to each edge of the spanning tree.    
+
+The edges coloured in Red represent the edges included in the MST     
+![4](https://i.ibb.co/CMQWgQ4/MST.png)      
 
 ### Time Complexity ###
 
+BFS, DFS, Topological Sort:    
 0(m+n)                                                                                                        
 where m - number of edges                                                                                
-      n - number of nodes 
+      n - number of nodes     
+
+Prim's and Kruskal's MST:    
+O(V^2)                                                                 
+where V - Number of vertices      
 
 

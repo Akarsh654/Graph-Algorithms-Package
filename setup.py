@@ -11,15 +11,15 @@ setup(name='graph_algo_vis',
           "License :: OSI Approved :: MIT License",
           "Operating System :: OS Independent"
       ],
-      version='0.2',
+      version='0.3',
       extras_require = {
-          "dev": ["networkx", "matplotlib",],
+          "dev": ["networkx", "matplotlib"],
       },
       install_requires=[           
           'networkx',
-          'matplotlib',
+          'matplotlib'
       ],
-      keywords = ['Graph', 'Algorithms', 'BFS', 'DFS', 'Topological Sort'],
+      keywords = ['Graph', 'Algorithms', 'BFS', 'DFS', 'Topological Sort', "Prim's MST", "Kruskal's MST"],
       description='Visualize Graph Algorithms',
       packages=['graph_algo_vis'],
       author="Akrash Sharma",
