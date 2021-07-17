@@ -3,6 +3,8 @@ setup.py
 graph_algo_vis/__init__.py
 graph_algo_vis/bfs_traversal.py
 graph_algo_vis/dfs_traversal.py
+graph_algo_vis/kruskalsMST.py
+graph_algo_vis/primsMST.py
 graph_algo_vis/topological_sort.py
 graph_algo_vis.egg-info/PKG-INFO
 graph_algo_vis.egg-info/SOURCES.txt
